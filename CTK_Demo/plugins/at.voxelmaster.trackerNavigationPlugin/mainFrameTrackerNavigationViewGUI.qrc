@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/images">
+    <file>images/voxelmaster_logo.jpeg</file>
+  </qresource>
+  <qresource prefix="/icons"/>
+</RCC>
