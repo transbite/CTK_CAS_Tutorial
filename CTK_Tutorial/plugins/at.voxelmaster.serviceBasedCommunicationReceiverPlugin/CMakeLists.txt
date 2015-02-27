@@ -9,8 +9,8 @@ SET(PLUGIN_SRCS
 # Files which should be processed by Qts moc
 SET(PLUGIN_MOC_SRCS
   ##serviceBasedCommunicationReceiverPlugin.h
-  ##serviceTracker.h
-  ##serviceInterface.h
+  serviceTracker.h
+  serviceInterface.h
 )
 
 # Qt Designer files which should be processed by Qts uic

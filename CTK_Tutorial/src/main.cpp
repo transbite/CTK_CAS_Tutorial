@@ -87,7 +87,7 @@ int main(int argc, char** argv)
 	ctkPluginFrameworkLauncher::addSearchPath("plugins",true);
 
 
-    if(ctkPluginFrameworkLauncher::start("org.commontk.eventadmin")/*startPlugin("org.commontk.eventadmin")*/)
+    if(startPlugin("org.commontk.eventadmin"))
 	{
 		std::cout << "Event Admin loading -> SUCCEEDED" << std::endl;
 	}
@@ -97,7 +97,7 @@ int main(int argc, char** argv)
 	}
 
 
-    if(ctkPluginFrameworkLauncher::start("at.voxelmaster.emptyPlugin")/*startPlugin("at.voxelmaster.emptyPlugin")*/)
+    if(startPlugin("at.voxelmaster.emptyPlugin"))
 	{
 
 		std::cout << "Empty plugin loading-> SUCCEEDED" << std::endl;
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 
 
 
-    if(ctkPluginFrameworkLauncher::start("at.voxelmaster.eventBasedCommunicationReceiverPlugin")/*startPlugin("at.voxelmaster.eventBasedCommunicationReceiverPlugin")*/)
+    if(startPlugin("at.voxelmaster.eventBasedCommunicationReceiverPlugin"))
 	{
 		std::cout << "Event based communication receiver plugin loading-> SUCCEEDED" << std::endl;
 	}
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 
 
 
-    if(ctkPluginFrameworkLauncher::start("at.voxelmaster.eventBasedCommunicationSenderPlugin")/*startPlugin("at.voxelmaster.eventBasedCommunicationSenderPlugin")*/)
+    if(startPlugin("at.voxelmaster.eventBasedCommunicationSenderPlugin"))
 	{
 		std::cout << "Event based communication sender plugin loading-> SUCCEEDED" << std::endl;
 	}
@@ -132,7 +132,7 @@ int main(int argc, char** argv)
 
 
 
-    if(ctkPluginFrameworkLauncher::start("at.voxelmaster.serviceBasedCommunicationReceiverPlugin")/*startPlugin("at.voxelmaster.serviceBasedCommunicationReceiverPlugin")*/)
+    if(startPlugin("at.voxelmaster.serviceBasedCommunicationReceiverPlugin"))
 	{
 
 		std::cout << "Service based communication receiver plugin loading-> SUCCEEDED" << std::endl;
@@ -144,7 +144,7 @@ int main(int argc, char** argv)
 
 
 
-    if(ctkPluginFrameworkLauncher::start("at.voxelmaster.serviceBasedCommunicationSenderPlugin")/*startPlugin("at.voxelmaster.serviceBasedCommunicationSenderPlugin")*/)
+    if(startPlugin("at.voxelmaster.serviceBasedCommunicationSenderPlugin"))
 	{
 		std::cout << "Service based communication sender plugin loading-> SUCCEEDED" << std::endl;
 	}

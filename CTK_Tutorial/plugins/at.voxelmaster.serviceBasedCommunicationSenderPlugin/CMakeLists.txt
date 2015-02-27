@@ -9,7 +9,7 @@ SET(PLUGIN_SRCS
 # Files which should be processed by Qts moc
 SET(PLUGIN_MOC_SRCS
   ##serviceBasedCommunicationSenderPlugin.h
-  ##serviceInterface.h
+  serviceInterface.h
 )
 
 # Qt Designer files which should be processed by Qts uic

@@ -54,7 +54,9 @@ void serviceBasedCommunicationSenderPlugin::start(ctkPluginContext* context)
 	instance = this;
 	this->context = context;
 
-	sendServiceToReceiver();
+    interfaceInstance = new serviceInterface();
+
+    sendServiceToReceiver();
 
 	std::cout << "serviceBasedCommunicationSenderPlugin start" << std::endl;
 }
@@ -82,7 +84,7 @@ void serviceBasedCommunicationSenderPlugin::sendServiceToReceiver()
 	ctkDictionary properties;
 //	properties["serviceEventID"]=0;
 
-	interfaceInstance = new serviceInterface();
+////	interfaceInstance = new serviceInterface();
 
 	interfaceInstance->sendText= "Send Service Text ";
 	interfaceInstance->sendActualLoopNumber=0;
