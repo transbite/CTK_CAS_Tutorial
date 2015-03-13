@@ -7,11 +7,11 @@ project(CTKP_Demo)
 #FIND CTK
 #
 FIND_PACKAGE(CTK)
-IF (CTK_USE_FILE)
-  INCLUDE (${CTK_USE_FILE} )
-ELSE (CTK_USE_FILE)
-  MESSAGE( FATAL_ERROR "This application requires CTK. One of these components is missing. Please verify configuration")
-ENDIF (CTK_USE_FILE)
+#IF (CTK_USE_FILE)
+#  INCLUDE (${CTK_USE_FILE} )
+#ELSE (CTK_USE_FILE)
+#  MESSAGE( FATAL_ERROR "This application requires CTK. One of these components is missing. Please verify configuration")
+#ENDIF (CTK_USE_FILE)
 
 #
 #FIND Qt4
@@ -124,6 +124,7 @@ QT4_AUTOMOC(${CTK_Demo_SRCS} ${CTK_Demo_HDRS})
 
 ADD_EXECUTABLE(CTK_Demo ${CTK_Demo_QT_UI_SRCS} ${CTK_Demo_RCC_SRCS} ${CTK_Demo_SRCS} ${CTK_Demo_HDRS} ${CTK_Demo_MOC_SRCS} )
 
-TARGET_LINK_LIBRARIES(CTK_Demo QVTK ${VTK_LIBRARIES} ${ITK_LIBRARIES} ${QT_LIBRARIES} ${CTK_LIBRARIES} ${my_libs} )
+##TARGET_LINK_LIBRARIES(CTK_Demo QVTK ${VTK_LIBRARIES} ${ITK_LIBRARIES} ${QT_LIBRARIES} ${CTK_LIBRARIES} ${my_libs} )
+TARGET_LINK_LIBRARIES(CTK_Demo ${VTK_LIBRARIES} ${ITK_LIBRARIES} ${QT_LIBRARIES} ${CTK_LIBRARIES} ${my_libs} )
 
 

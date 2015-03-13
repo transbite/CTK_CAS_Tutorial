@@ -85,7 +85,7 @@ int main(int argc, char** argv)
 
 
 	ctkPluginFrameworkLauncher::addSearchPath("plugins",true);
-
+    ctkPluginFrameworkLauncher::start();
 
     if(startPlugin("org.commontk.eventadmin"))
 	{

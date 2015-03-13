@@ -82,7 +82,7 @@ void serviceBasedCommunicationSenderPlugin::sendServiceToReceiver()
 {
 
 	ctkDictionary properties;
-//	properties["serviceEventID"]=0;
+    properties["serviceEventID"]=0;
 
 ////	interfaceInstance = new serviceInterface();
 
@@ -90,17 +90,19 @@ void serviceBasedCommunicationSenderPlugin::sendServiceToReceiver()
 	interfaceInstance->sendActualLoopNumber=0;
 	interfaceInstance->sendNumberOfLoop=10;
 
-    for(interfaceInstance->sendActualLoopNumber= 0; interfaceInstance->sendActualLoopNumber<= interfaceInstance->sendNumberOfLoop; interfaceInstance->sendActualLoopNumber++)
+    serviceRegistrationReference = context->registerService<serviceInterface>(interfaceInstance, properties);
+
+    for(interfaceInstance->sendActualLoopNumber = 0; interfaceInstance->sendActualLoopNumber <= interfaceInstance->sendNumberOfLoop;
+        interfaceInstance->sendActualLoopNumber++)
     {
 		qDebug()<<"Send Service To Receiver";
 
 		qDebug()<<interfaceInstance->sendText << interfaceInstance->sendActualLoopNumber;
 
-		serviceRegistrationReference = context->registerService<serviceInterface>(interfaceInstance, properties);
-
-		properties["serviceEventID"]=0;// An ID pro event
+        //serviceRegistrationReference = context->registerService<serviceInterface>(interfaceInstance, properties);
+        serviceRegistrationReference = context->getServiceReference<serviceInterface>();
+        properties["serviceEventID"] = 15 + interfaceInstance->sendActualLoopNumber;// An ID pro event
 		serviceRegistrationReference.setProperties(properties);
-
     }
 
 }

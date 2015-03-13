@@ -74,6 +74,16 @@ private:
 	void modifiedService (const ctkServiceReference &reference, serviceInterface* service)
 	{
 		serviceBasedCommunicationReceiverPluginObject->receiveServiceFromSender(service->sendText, service->sendActualLoopNumber, service->sendNumberOfLoop);
+		QStringList propKeys = reference.getPropertyKeys();
+		for(QStringList::iterator it = propKeys.begin(); it != propKeys.end(); ++it)
+		{
+			QString key = *it;
+			QVariant prop = reference.getProperty(key);
+			qDebug() << key << " - " << prop;
+		}
+//		qDebug() << "Service reference: " << serviceInterface->sendActualLoopNumber << " - " << serviceInterface->sendText;
+
+
 	}
 
 
